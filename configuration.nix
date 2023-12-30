@@ -85,14 +85,6 @@
     warn-dirty = false
   '';
 
-  # overlays for my packages
-  #nixpkgs.overlays = [
-  #  (import (builtins.fetchGit {
-  #    url = "/home/jason/overlay"; # Replace with the actual path to your flake
-  #    # You can also use a remote Git repository URL here
-  #  }))
-  #];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -104,54 +96,15 @@
     wget
     acpi
     mlocate
-    imagemagick
-    xclip
     binutils
     srm
     bash-completion
     nix-bash-completions
     vim-full
     inotify-tools
-    zellij
-
-    # Install Helix from the `helix` input
-    #helix.packages."${pkgs.system}".helix
-
-    (python311.withPackages (ps: with ps; [
-
-        pip
-        ipython
-
-        requests
-        beautifulsoup4
-        google-auth-httplib2
-        google-auth-oauthlib
-        google-api-python-client
-
-        torch
-        pandas
-        transformers
-        sentence-transformers
-
-    ]))
-
-    # fonts
-    source-han-sans
-    source-han-sans-japanese
-    source-han-sans-korean
-    source-han-sans-simplified-chinese
-    source-han-sans-traditional-chinese
-    source-han-serif
-    source-han-serif-japanese
-    source-han-serif-korean
-    source-han-serif-simplified-chinese
-    source-han-serif-traditional-chinese
-    nerdfonts
-    terminus-nerdfont
-
-    # my packages
-    #hello-again
-
+    imagemagick
+    xclip
+    xdotool
   ];
 
 
@@ -161,31 +114,70 @@
     description = "Jason";
     extraGroups = [ "networkmanager" "wheel" "mlocate" ];
     packages = with pkgs; [
-        # self
-        vlc
+
+        # desktop
         conky
         evince
-        dropbox
         gedit
+        dropbox
         gnome.eog
-        firefox
-        google-chrome
         numix-icon-theme-circle
         numix-gtk-theme
-        obsidian
-        xdotool
+
+        # media
+        vlc
         yt-dlp
+        firefox
+        google-chrome
+
+        # dev
+        obsidian
         github-cli
-        # silly
+        cargo
+
+        # fun
         cowsay
         xcowsay
         cmatrix
         lolcat
         asciiquarium
+
         # work
         teams-for-linux 
 
-        # my flakes
+        # kids today
+        helix
+        zellij
+
+        # fonts
+        nerdfonts
+        terminus-nerdfont
+        noto-fonts-emoji
+        source-han-sans
+        source-han-sans-japanese
+        source-han-sans-korean
+        source-han-sans-simplified-chinese
+        source-han-sans-traditional-chinese
+        source-han-serif
+        source-han-serif-japanese
+        source-han-serif-korean
+        source-han-serif-simplified-chinese
+        source-han-serif-traditional-chinese
+
+        (python311.withPackages (ps: with ps; [
+          pip
+          ipython
+          requests
+          beautifulsoup4
+          google-auth-httplib2
+          google-auth-oauthlib
+          google-api-python-client
+          torch
+          pandas
+          transformers
+          sentence-transformers
+        ]))
+
     ];    
   };      
           
