@@ -19,6 +19,7 @@
       # sudo nixos-rebuild switch --flake .#nixos
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = inputs;
         modules = [
           ./configuration.nix
         ];

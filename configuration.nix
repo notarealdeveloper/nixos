@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, helix, ... }:
 
 {
   imports =
@@ -111,8 +111,10 @@
     nix-bash-completions
     vim-full
     inotify-tools
-
     zellij
+
+    # Install Helix from the `helix` input
+    helix.packages."${pkgs.system}".helix
 
     (python311.withPackages (ps: with ps; [
 
