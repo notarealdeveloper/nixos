@@ -172,6 +172,7 @@
         obsidian
         xdotool
         yt-dlp
+        github-cli
         # silly
         cowsay
         xcowsay
