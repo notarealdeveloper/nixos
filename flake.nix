@@ -5,7 +5,7 @@
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    helix.url = "github:helix-editor/helix/23.10";
+    #helix.url = "github:helix-editor/helix/23.10";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -14,10 +14,9 @@
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: {
-
     nixosConfigurations = {
       # sudo nixos-rebuild switch --flake .#nixos
-      "nixos" = nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [

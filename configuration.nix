@@ -19,7 +19,7 @@
     fsType = "ext4";
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  #networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -75,13 +75,14 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   nix.extraOptions = ''
     experimental-features = nix-command flakes
+    warn-dirty = false
   '';
 
   # overlays for my packages
@@ -114,7 +115,7 @@
     zellij
 
     # Install Helix from the `helix` input
-    helix.packages."${pkgs.system}".helix
+    #helix.packages."${pkgs.system}".helix
 
     (python311.withPackages (ps: with ps; [
 
