@@ -85,12 +85,12 @@
   '';
 
   # overlays for my packages
-  nixpkgs.overlays = [
-    (import (builtins.fetchGit {
-      url = "/home/jason/overlay"; # Replace with the actual path to your flake
-      # You can also use a remote Git repository URL here
-    }))
-  ];
+  #nixpkgs.overlays = [
+  #  (import (builtins.fetchGit {
+  #    url = "/home/jason/overlay"; # Replace with the actual path to your flake
+  #    # You can also use a remote Git repository URL here
+  #  }))
+  #];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -147,7 +147,7 @@
     terminus-nerdfont
 
     # my packages
-    hello-again
+    #hello-again
 
   ];
 
