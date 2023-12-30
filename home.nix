@@ -21,37 +21,6 @@
     userEmail = "notarealdeveloper@gmail.com";
   };
 
-  # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
-    nnn     # terminal file manager
-    ripgrep # recursively searches directories for a regex pattern
-    fzf     # A command-line fuzzy finder
-    socat   # replacement of openbsd-netcat
-    nmap    # A utility for network discovery and security auditing
-
-    # nix related
-    #
-    # it provides the command `nom` works just like `nix`
-    # with more details log output
-    nix-output-monitor
-
-    # productivity
-    glow # markdown previewer in terminal
-
-    btop  # replacement of htop/nmon
-    iotop # io monitoring
-    iftop # network monitoring
-
-    # system call monitoring
-    strace # system call monitoring
-    ltrace # library call monitoring
-    lsof # list open files
-
-    # system tools
-    pciutils # lspci
-    usbutils # lsusb
-  ];
-
   # starship - an customizable prompt for any shell
   programs.starship = {
     enable = true;

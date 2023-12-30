@@ -8,6 +8,7 @@
     helix.url = "github:helix-editor/helix/master";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
@@ -26,6 +27,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.jason = import ./home.nix;
           }
+
         ];
       };
     };

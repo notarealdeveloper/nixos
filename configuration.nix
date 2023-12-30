@@ -103,8 +103,8 @@
     vim-full
     inotify-tools
     imagemagick
-    xclip
     xdotool
+    xclip
   ];
 
 
@@ -148,6 +148,11 @@
         # kids today
         helix
         zellij
+        nnn                 # terminal file manager
+        ripgrep             # recursively searches directories for a regex pattern
+        fzf                 # A command-line fuzzy finder
+        glow                # markdown previewer in terminal
+        nix-output-monitor  # nom command, works like nix with better output
 
         # fonts
         nerdfonts
